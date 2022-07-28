@@ -1,4 +1,4 @@
-### 项目名称：do your best to optimize SM3 implementation (software)
+### Project：do your best to optimize SM3 implementation (software)
 #### 项目代码说明
 * 项目共有三个源代码文件**SM3_without_optimization.cpp**、**SM3_宏函数优化.cpp**与**SM3_宏函数_SIMD.cpp**。
 * 代码**SM3_without_optimization.cpp**是没有做任何优化的SM3的简单实现。
