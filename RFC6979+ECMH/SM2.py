@@ -1,4 +1,3 @@
-import hashlib
 import random
 import math
 import hmac
@@ -66,9 +65,9 @@ def key_Gen(n,P,a,p,m):
     mhash=bitcoin.encode(bitcoin.hash_to_int(m),256,32)#实现bits2octets变换
     iv=bitcoin.encode(sk, 256, 32)#进行int2otets变换
     K=hmac.new(K,V+b'\x00'+iv+mhash,digestmod='sha256').digest()#使用K对数据进行HMAC算法
-    V=hmac.new(K,V,hashlib.sha256).digest()
+    V=hmac.new(K,V,digestmod='sha256').digest()
     K=hmac.new(K,V+b'\x01'+iv+mhash,digestmod='sha256').digest()
-    V=hmac.new(K,V,hashlib.sha256).digest()
+    V=hmac.new(K,V,digestmod='sha256').digest()
     k=bitcoin.decode(hmac.new(K,V,digestmod='sha256').digest(),256)
     #k=random.randint(1,n-1)
     pk=Mulyipoint(k,P,a,p)
