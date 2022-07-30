@@ -1,4 +1,3 @@
-from re import A
 import SM2
 import random
 import bitcoin
